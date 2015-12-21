@@ -90,7 +90,7 @@ see: <http://pandoc.org/README.html#templates>
 
 #### YAML header
 
-Varibles can also be included within a YAML header. For example:
+Variables can also be included within a YAML header. For example:
 
     ---
     title: Title of Document
@@ -119,7 +119,7 @@ file.
 In text citations are inserted inside square brackets using the 
 `@` symbol followed by the correct identifier from the .bib file.  Multiple 
 citations are separated by semicolons and can each be given a prefix, location
-and a suffix. To supress the author, simply use `-@`. For instance:
+and a suffix. To suppress the author, simply use `-@`. For instance:
 
     Early definitions of Evidence-Based Medicine [see, for example: @Sackett_1996]
 
@@ -130,7 +130,7 @@ and a suffix. To supress the author, simply use `-@`. For instance:
 
 #### Generating the references
 
-To generate the references with pandoc the bibliograhy file and the citation
+To generate the references with pandoc the bibliography file and the citation
 style file can be pre-specified in the document's yaml header. Or alternatively, 
 using the following flags in the pandoc command:
 
