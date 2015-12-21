@@ -62,6 +62,12 @@ Or see: <https://github.com/jgm/pandoc-templates>.
 `--reference-docx template.docx`  similarly allows a template to be specified for
 office documents.
 
+`--css` allows you to supply a css file for formatting html output. This will
+add a link to the css file in the html. Alternatively, if you wish to create
+a fully standalone html document (i.e. with the css embedded in the document)
+then use the `-H` option instead. Note however that the css file you pass to
+the `-H` option must be enclosed between `<style> </style>` tags.
+
 #### Variables
 
 Further document options can be specified by using the `--variable` or `-V` flag. 
