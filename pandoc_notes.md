@@ -150,3 +150,24 @@ $\latex$ formatting can be inserted into markdown documents by enclosing it with
 
 No extra option or filter needs to be passed to the pandoc command to interpet this.
 
+
+# 5. Example Makefile
+
+    VERSION = 0.0.1
+    FILENAME = notes
+    PANDOCFLAGS = --standalone \
+                  --smart \
+                  --filter=pandoc-citeproc \
+                  --template=/path/to/template \
+                  --variable fontfamily=libertine \
+                  --variable geometry:margin=3cm \
+                  --bibliography=/path/to/ref.bib \
+                  --csl=vancouver.csl
+    
+    all: $(FILENAME)_v$(VERSION).pdf
+
+    %.pdf: $(FILENAME).md $(FILENAME).bib
+            pandoc $< $(PANDOCFLAGS) -o $@
+    
+    clean:
+            rm $(FILENAME)_v$(VERSION).pdf
