@@ -140,3 +140,13 @@ using the following flags in the pandoc command:
       --csl=vancouver.csl \
       -o Notes.html
 
+
+# 4. Further formatting
+
+$\latex$ formatting can be inserted into markdown documents by enclosing it with
+`$`. For instance:
+
+     $\forall a \in D: X(a) \quad$
+
+No extra option or filter needs to be passed to the pandoc command to interpet this.
+
