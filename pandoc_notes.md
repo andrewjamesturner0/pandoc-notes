@@ -164,17 +164,41 @@ Images can be inserted into markdown documents in the standard way. For example:
     FILENAME = notes
     PANDOCFLAGS = --standalone \
                   --smart \
-                  --filter=pandoc-citeproc \
-                  --template=/path/to/template \
-                  --variable fontfamily=libertine \
-                  --variable geometry:margin=3cm \
-                  --bibliography=/path/to/ref.bib \
+	          --variable version=$(VERSION) \
+	          --filter=pandoc-citeproc \
+	          --bibliography=$(FILENAME).bib \
                   --csl=vancouver.csl
-    
-    all: $(FILENAME)_v$(VERSION).pdf
+    PANDOC_PDF_FLAGS = --variable fontfamily=libertine \
+	               --variable geometry:margin=3cm
+                       --template=/path/to/template \
+    PANDOC_HTML_FLAGS = --include-in-header=style.css
+
+    all: $(FILENAME)_v$(VERSION).pdf \
+         $(FILENAME)_v$(VERSION).html \
+         $(FILENAME)_v$(VERSION).docx
+
+    pdf: $(FILENAME)_v$(VERSION).pdf
+
+    html: $(FILENAME)_v$(VERSION).html
+
+    docx: $(FILENAME)_v$(VERSION).docx
 
     %.pdf: $(FILENAME).md $(FILENAME).bib
-            pandoc $< $(PANDOCFLAGS) -o $@
-    
-    clean:
-            rm $(FILENAME)_v$(VERSION).pdf
+        pandoc $< $(PANDOC_FLAGS) $(PANDOC_PDF_FLAGS) -o $@
+
+    %.html: $(FILENAME).md $(FILENAME).bib
+        pandoc $< $(PANDOC_FLAGS) $(PANDOC_HTML_FLAGS) -o $@
+
+    %.docx: $(FILENAME).md $(FILENAME).bib
+        pandoc $< $(PANDOC_FLAGS) -o $@
+
+    clean: cleanhtml cleanpdf cleandocx
+
+    cleanhtml:
+        rm $(FILENAME)_v$(VERSION).html
+
+    cleanpdf:
+        rm $(FILENAME)_v$(VERSION).pdf
+
+    cleandocx:
+        rm $(FILENAME)_v$(VERSION).docx
