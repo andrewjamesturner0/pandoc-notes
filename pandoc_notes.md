@@ -13,10 +13,10 @@ doc):
 
     pandoc Input.md -o Output.html
 
-Pandoc is more powerful than this. It can convert to and from many different formats,
-with a large range of extra options. These notes cover converting from markdown
-to html, pdf, and doc, as well as how to include citations and bibliographies.
-Essentially, everything you need to be able to write a paper. 
+Pandoc is more powerful than this. It can convert to and from many different
+formats, with a large range of extra options. These notes cover converting from
+markdown to html, pdf, and doc, as well as how to include citations and
+bibliographies.  Essentially, everything you need to be able to write a paper.
 
 For more information about writing markdown for pandoc, see:
 <http://pandoc.org/demo/example9/pandocs-markdown.html>
@@ -52,8 +52,8 @@ and footer from pandoc's built in templates.
  
  `--filter pandoc-citproc` processes citations (see below).
 
-`--template` allows you to supply a custom template file.
-To view the built in templates:
+`--template` allows you to supply a custom template file.  To view the built in
+templates:
 
     pandoc -D $DOCTYPE
 
@@ -64,19 +64,19 @@ directory (default: `$HOME/.pandoc`) i.e. `~/.pandoc/templates/`. These can then
 be referred to simply by filename, without having to specify the full path the
 to file.
 
-`--reference-docx template.docx`  similarly allows a template to be specified for
-office documents.
+`--reference-docx template.docx`  similarly allows a template to be specified
+for office documents.
 
 `--css` allows you to supply a css file for formatting html output. This will
-add a link to the css file in the html. Alternatively, if you wish to create
-a fully standalone html document (i.e. with the css embedded in the document)
-then use the `-H` option instead. Note however that the css file you pass to
-the `-H` option must be enclosed between `<style> </style>` tags.
+add a link to the css file in the html. Alternatively, if you wish to create a
+fully standalone html document (i.e. with the css embedded in the document) then
+use the `-H` option instead. Note however that the css file you pass to the `-H`
+option must be enclosed between `<style> </style>` tags.
 
 #### Variables
 
-Further document options can be specified by using the `--variable` or `-V` flag. 
-For example:
+Further document options can be specified by using the `--variable` or `-V`
+flag. For example:
 
     pandoc Input.md \
       --variable title="Title of Document" \
@@ -86,9 +86,9 @@ For example:
 
 ##### What variables are available to be set?
 
-Any variables used by the document template. For example, pandoc's html
-template includes the `$css$` variable, and pandoc's latex template contains
-the `$fontfamily$` variable.
+Any variables used by the document template. For example, pandoc's html template
+includes the `$css$` variable, and pandoc's latex template contains the
+`$fontfamily$` variable.
 
 For a complete list of what variables are available for each type of document,
 see: <http://pandoc.org/README.html#templates>
@@ -121,22 +121,23 @@ file.
 
 #### Markdown formatting
 
-In text citations are inserted inside square brackets using the 
-`@` symbol followed by the correct identifier from the .bib file.  Multiple 
-citations are separated by semicolons and can each be given a prefix, location
-and a suffix. To suppress the author, simply use `-@`. For instance:
+In text citations are inserted inside square brackets using the `@` symbol
+followed by the correct identifier from the .bib file.  Multiple citations are
+separated by semicolons and can each be given a prefix, location and a suffix.
+To suppress the author, simply use `-@`. For instance:
 
-    Early definitions of Evidence-Based Medicine [see, for example: @Sackett_1996]
+    Early definitions of Evidence-Based Medicine [see, for example:
+    @Sackett_1996]
 
     Sackett et al [-@Sackett_1996] defined EBM as "the conscientious...
     
-    The first appearance of the term Evidence-Based Medicine occurred in an article
-    in JAMA by the EBM Working Group [-@EBM_working_group_1992, p. 2420]
+    The first appearance of the term Evidence-Based Medicine occurred in an
+    article in JAMA by the EBM Working Group [-@EBM_working_group_1992, p. 2420]
 
 #### Generating the references
 
 To generate the references with pandoc the bibliography file and the citation
-style file can be pre-specified in the document's yaml header. Or alternatively, 
+style file can be pre-specified in the document's yaml header. Or alternatively,
 using the following flags in the pandoc command:
 
     pandoc Notes.md
@@ -155,7 +156,8 @@ $\latex$ formatting can be inserted into markdown documents by enclosing it with
 
      $\forall a \in D: X(a) \quad$
 
-No extra option or filter needs to be passed to the pandoc command to interpet this.
+No extra option or filter needs to be passed to the pandoc command to interpret
+this.
 
 ## Images
 
