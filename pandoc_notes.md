@@ -59,6 +59,11 @@ To view the built in templates:
 
 Or see: <https://github.com/jgm/pandoc-templates>.
 
+Custom templates should be placed in a `templates` directory in the user data
+directory (default: `$HOME/.pandoc`) i.e. `~/.pandoc/templates/`. These can then
+be referred to simply by filename, without having to specify the full path the
+to file.
+
 `--reference-docx template.docx`  similarly allows a template to be specified for
 office documents.
 
