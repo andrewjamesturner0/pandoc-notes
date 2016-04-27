@@ -143,6 +143,8 @@ using the following flags in the pandoc command:
 
 # 4. Further formatting
 
+## Latex
+
 $\latex$ formatting can be inserted into markdown documents by enclosing it with
 `$`. For instance:
 
@@ -150,6 +152,11 @@ $\latex$ formatting can be inserted into markdown documents by enclosing it with
 
 No extra option or filter needs to be passed to the pandoc command to interpet this.
 
+## Images
+
+Images can be inserted into markdown documents in the standard way. For example:
+
+    ![Alt-text](/path/to/image.png "Title")
 
 # 5. Example Makefile
 
