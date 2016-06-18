@@ -162,8 +162,8 @@ div#TOC, nav#TOC
 
 
 body {
-    font-family: "Helvetica Neue", Helvetica, "Liberation Sans", Calibri, Arial, sans-serif;
-    /*font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;*/
+    /*font-family: "Helvetica Neue", Helvetica, "Liberation Sans", Calibri, Arial, sans-serif;*/
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     
     line-height: 1.3em;
     margin: 0 auto;
@@ -176,8 +176,8 @@ body {
 
 h1, h2, h3, h4, h5, h6
 {
-    /*font-family: "Helvetica Neue", Helvetica, "Liberation Sans", Calibri, Arial, sans-serif; /* Sans-serif headers */
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-family: "Helvetica Neue", Helvetica, "Liberation Sans", Calibri, Arial, sans-serif;
+    /*font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; */
     line-height: 40px;
     page-break-after: avoid; /* Firefox, Chrome, and Safari do not support the property value "avoid" */
 }
