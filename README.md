@@ -1,21 +1,5 @@
 # PANDOC NOTES
 
-# 0. pandoc-init
-
-The script `pandoc-init.sh` creates:
-
-* markdown document with basic header
-* Makefile for html, pdf and docx
-* Other files: bibtex (empty), CSS (buttondown.css)
-
-Usage:
-
-    ./pandoc-init [document-name]
-
-
-To use the templates provided in the `templates/` folder, move them to
-`~/.pandoc/templates`.
-
 
 # 1. Pandoc basics
 
