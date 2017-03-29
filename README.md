@@ -45,7 +45,7 @@ and footer from pandoc's built in templates.
 
 `--toc` adds a table of contents
  
- `--filter pandoc-citproc` processes citations (see below).
+`--filter pandoc-citproc` processes citations (see below).
 
 `--template` allows you to supply a custom template file.  To view the built in
 templates:
@@ -166,13 +166,13 @@ Images can be inserted into markdown documents in the standard way. For example:
     FILENAME = notes
     PANDOCFLAGS = --standalone \
                   --smart \
-	          --variable version=$(VERSION) \
-	          --filter=pandoc-citeproc \
-	          --bibliography=$(FILENAME).bib \
+                  --variable version=$(VERSION) \
+                  --filter=pandoc-citeproc \
+                  --bibliography=$(FILENAME).bib \
                   --csl=vancouver.csl
     PANDOC_PDF_FLAGS = --variable fontfamily=libertine \
-	               --variable geometry:margin=3cm
-                       --template=/path/to/template \
+                       --variable geometry:margin=3cm \
+                       --template=/path/to/template
     PANDOC_HTML_FLAGS = --include-in-header=style.css
 
     all: $(FILENAME)_v$(VERSION).pdf \
