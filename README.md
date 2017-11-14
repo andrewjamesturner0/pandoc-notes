@@ -41,7 +41,7 @@ For much more complete information, see:
 `--standalone` creates a standalone file by adding an appropriate header
 and footer from pandoc's built in templates.
 
-`--smart` intelligently interprets quotes, brackets, em dashes etc.
+`-smart` intelligently interprets quotes, brackets, em dashes etc.
 
 `--toc` adds a table of contents
  
@@ -59,7 +59,7 @@ directory (default: `$HOME/.pandoc`) i.e. `~/.pandoc/templates/`. These can then
 be referred to simply by filename, without having to specify the full path the
 to file.
 
-`--reference-docx template.docx`  similarly allows a template to be specified
+`--reference-doc template.docx`  similarly allows a template to be specified
 for office documents.
 
 `--css` allows you to supply a css file for formatting html output. This will
@@ -165,7 +165,7 @@ Images can be inserted into markdown documents in the standard way. For example:
     VERSION = 0.0.1
     FILENAME = notes
     PANDOCFLAGS = --standalone \
-                  --smart \
+                  -smart \
                   --variable version=$(VERSION) \
                   --filter=pandoc-citeproc \
                   --bibliography=$(FILENAME).bib \
